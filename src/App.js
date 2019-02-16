@@ -1,28 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import styled from 'styled-components'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+import DistanceBar from './components/DistanceBar'
+
+const StyledHeader = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+`
+
+const StyledTitle = styled.h1`
+  font-family: 'Courier New', Courier, monospace;
+  opacity: 0.2;
+  font-weight: 500;
+`
+
+const StyledBody = styled.div`
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 10px;
+`
+
+export default () => {
+  return (
+    <>
+      <StyledHeader>
+        <StyledTitle>Are We There Yet?</StyledTitle>
+      </StyledHeader>
+      <StyledBody>
+        <DistanceBar />
+      </StyledBody>
+    </>
+  )
 }
-
-export default App;
