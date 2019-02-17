@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/ullibodnar/are-we-there-yet/precache-manifest.2f40dc0edb1f53d1f25da4aecec6020a.js"
+  "/are-we-there-yet/precache-manifest.89f85df48fa866973b3cd85d68ce6646.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/ullibodnar/are-we-there-yet/index.html", {
+workbox.routing.registerNavigationRoute("/are-we-there-yet/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
