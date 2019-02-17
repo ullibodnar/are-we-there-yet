@@ -2,7 +2,7 @@
   "name": "are-we-there-yet",
   "version": "0.1.0",
   "private": true,
-  "homepage": "",
+  "homepage": "https://ullibodnar.github.io/are-we-there-yet",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "moment": "^2.24.0",
