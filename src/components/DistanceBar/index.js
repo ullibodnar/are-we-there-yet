@@ -15,7 +15,14 @@ const DistanceBar = styled.div`
 const initialState = {
   currentDate: moment(),
   pickedDate: moment('20190502T0805'),
-  difference: {}
+  difference: {},
+  randoms: [
+    Math.random(),
+    Math.random(),
+    Math.random(),
+    Math.random(),
+    Math.random()
+  ]
 }
 
 function addZeros (ex) {
@@ -41,7 +48,7 @@ function getTime (m) {
 
 export default () => {
   const [state, setState] = useState(initialState)
-  const { currentDate, pickedDate, difference } = state
+  const { currentDate, pickedDate, difference, randoms } = state
 
   const distance = pickedDate.diff(currentDate)
 
@@ -51,11 +58,15 @@ export default () => {
 
   return (
     <DistanceBar>
-      <TimeBox time={difference.days} title='days' />
-      <TimeBox time={difference.hours} title={`hrs`} />
-      <TimeBox time={difference.minutes} title={`min`} />
-      <TimeBox time={difference.seconds} title={`sec`} />
-      <TimeBox time={difference.milliseconds} title={`ms`} />
+      <TimeBox time={difference.days} title='days' flicker={randoms[0]} />
+      <TimeBox time={difference.hours} title={`hrs`} flicker={randoms[1]} />
+      <TimeBox time={difference.minutes} title={`min`} flicker={randoms[2]} />
+      <TimeBox time={difference.seconds} title={`sec`} flicker={randoms[3]} />
+      <TimeBox
+        time={difference.milliseconds}
+        title={`ms`}
+        flicker={randoms[4]}
+      />
     </DistanceBar>
   )
 }

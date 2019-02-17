@@ -9,6 +9,9 @@ const TimeBox = styled.div`
   max-width: 11vmin;
   position: relative;
 `
+const getOpacity = () => {
+  return Math.random()
+}
 
 const flicker = keyframes`
   0% {
@@ -16,7 +19,7 @@ const flicker = keyframes`
   }
     
   50% {
-    opacity: 0.8
+    opacity: .80
 
   }
   100% {
@@ -35,7 +38,7 @@ const Time = styled.p`
   font-family: 'Nixie One';
   text-shadow: 0 0 1px #fefc7c, 0 0 3px rgba(255, 217, 54, 0.7), 0 0 5px #ff6a00,
     0 0 14px #ff6a00, 0 0 17px #ff6a00, 0 0 20px red;
-  animation: ${flicker} 0.001s infinite;
+  animation: ${flicker} ${({ flicker }) => flicker}s infinite;
 `
 
 const LayeredTime = styled.p`
@@ -68,11 +71,11 @@ const IndNumber = styled.span`
   text-align: center;
 `
 
-export default ({ time = '00', title }) => {
+export default ({ time = '00', title, flicker }) => {
   return (
     <>
       <TimeBox>
-        <Time>
+        <Time flicker={flicker}>
           <IndNumber>{`${time}`.charAt(0)}</IndNumber>
           <IndNumber>{`${time}`.charAt(1)}</IndNumber>
         </Time>
