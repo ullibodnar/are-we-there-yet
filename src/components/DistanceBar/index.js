@@ -14,16 +14,28 @@ const DistanceBar = styled.div`
 
 const initialState = {
   currentDate: moment(),
-  pickedDate: moment('20190218'),
+  pickedDate: moment('20190525'),
   difference: {}
 }
+
+function addZeros (ex) {
+  if (ex < 10) {
+    if (ex <= 0) {
+      return `00`
+    } else {
+      return `0${ex}`
+    }
+  }
+  return ex
+}
+
 function getTime (m) {
   return {
-    days: Math.floor(m / 1000 / 60 / 60 / 24),
-    hours: Math.floor((m / 1000 / 60 / 60) % 24),
-    minutes: Math.floor((m / 1000 / 60) % 60),
-    seconds: Math.floor((m / 1000) % 60),
-    milliseconds: m % 1000
+    days: addZeros(Math.floor(m / 1000 / 60 / 60 / 24)),
+    hours: addZeros(Math.floor((m / 1000 / 60 / 60) % 24)),
+    minutes: addZeros(Math.floor((m / 1000 / 60) % 60)),
+    seconds: addZeros(Math.floor((m / 1000) % 60)),
+    milliseconds: addZeros(Math.floor((m % 1000) / 10))
   }
 }
 
