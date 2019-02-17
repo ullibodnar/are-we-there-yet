@@ -6,7 +6,7 @@ const TimeBox = styled.div`
   flex-direction: column;
   font-family: 'Courier New', Courier, monospace;
   width: 15%;
-  max-width: 5em;
+  max-width: 11vmin;
   position: relative;
 `
 
@@ -28,11 +28,10 @@ const flicker = keyframes`
 const Time = styled.p`
   display: flex;
   justify-content: space-between;
-  font-size: 4em;
+  align-items: center;
+  font-size: 8vmin;
   margin: 0 auto;
   width: 100%;
-  flex-grow: 4;
-  vertical-align: middle;
   font-family: 'Nixie One';
   text-shadow: 0 0 1px #fefc7c, 0 0 3px rgba(255, 217, 54, 0.7), 0 0 5px #ff6a00,
     0 0 14px #ff6a00, 0 0 17px #ff6a00, 0 0 20px red;
@@ -40,15 +39,16 @@ const Time = styled.p`
 `
 
 const LayeredTime = styled.p`
+  display: flex;
+  align-items: center;
   font-family: 'Nixie One';
   position: absolute;
   margin: 0 auto;
-  font-size: 4em;
+  font-size: 8vmin;
   left: 0;
   right: 0;
   text-align: center;
   opacity: 0.02;
-  display: flex;
   justify-content: space-between;
 `
 

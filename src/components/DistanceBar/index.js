@@ -14,7 +14,7 @@ const DistanceBar = styled.div`
 
 const initialState = {
   currentDate: moment(),
-  pickedDate: moment('20190525'),
+  pickedDate: moment('20190502T0805'),
   difference: {}
 }
 
