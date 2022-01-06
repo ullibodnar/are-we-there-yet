@@ -5,13 +5,14 @@ const TimeBox = styled.div`
   display: flex;
   flex-direction: column;
   font-family: 'Courier New', Courier, monospace;
-  width: 15%;
-  max-width: 11vmin;
   position: relative;
+  width: 14vh;
+
+  @media only screen and (min-width: 480px) {
+    max-width: 11vmin;
+    width: 15%;
+  }
 `
-const getOpacity = () => {
-  return Math.random()
-}
 
 const flicker = keyframes`
   0% {
@@ -32,13 +33,17 @@ const Time = styled.p`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 8vmin;
+  font-size: 10vh;
   margin: 0 auto;
   width: 100%;
   font-family: 'Nixie One';
   text-shadow: 0 0 1px #fefc7c, 0 0 3px rgba(255, 217, 54, 0.7), 0 0 5px #ff6a00,
     0 0 14px #ff6a00, 0 0 17px #ff6a00, 0 0 20px red;
   animation: ${flicker} ${({ flicker }) => flicker}s infinite;
+
+  @media only screen and (min-width: 480px) {
+    font-size: 8vmin;
+  }
 `
 
 const LayeredTime = styled.p`
@@ -47,12 +52,15 @@ const LayeredTime = styled.p`
   font-family: 'Nixie One';
   position: absolute;
   margin: 0 auto;
-  font-size: 8vmin;
   left: 0;
   right: 0;
-  text-align: center;
   opacity: 0.02;
   justify-content: space-between;
+  font-size: 10vh;
+
+  @media only screen and (min-width: 480px) {
+    font-size: 8vmin;
+  }
 `
 
 const TitleBox = styled.div`
