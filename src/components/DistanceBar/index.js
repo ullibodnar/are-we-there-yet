@@ -23,7 +23,7 @@ const DistanceBar = styled.div`
 
 const initialState = {
   currentDate: moment(),
-  pickedDate: moment.tz('20190502T0805', 'Pacific/Auckland'),
+  pickedDate: moment('20220107T0805'),
   difference: {},
   randoms: [
     Math.random(),
